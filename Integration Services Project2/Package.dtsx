@@ -11,10 +11,68 @@
   DTS:LocaleID="1036"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{F4D8C95E-ACED-47A4-8418-2B2EF0DC3608}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{2AF8C7AC-D49C-4D79-8214-78963FE52385}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gestionnaire de connexions de fichiers plats]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F9EC0186-1F56-4A46-836A-1E91FB63C4EE}"
+      DTS:ObjectName="Gestionnaire de connexions de fichiers plats">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1036"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Public\grasp_data\__MACOSX\grasp_data\data\gestion_livreSQL\Creation Table\auteurs.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NUMERO"
+              DTS:DTSID="{6FE5DBAF-751A-4003-A27A-E13F7250106D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NOM"
+              DTS:DTSID="{8A0AC545-39EB-4297-98D5-77E6A9E9EC29}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRENOM"
+              DTS:DTSID="{0C57A061-86EE-40A9-8E69-04B6906AB57E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DOMICILE"
+              DTS:DTSID="{EDBFDDCB-E52B-4D8F-A9C4-714FA9B3ABCE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -178,7 +236,7 @@
                 <property
                   dataType="System.String"
                   description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
-                  name="FastLoadOptions"></property>
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
                 <property
                   dataType="System.Int32"
                   description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
@@ -201,12 +259,6 @@
                   name="Entrée de destination OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[NUMERO_A]"
-                      cachedDataType="i4"
-                      cachedName="NUMERO_A"
-                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[NUMERO_A]"
-                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[NUMERO_A]" />
-                    <inputColumn
                       refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[NOM]"
                       cachedDataType="wstr"
                       cachedLength="60"
@@ -220,6 +272,12 @@
                       cachedName="PRENOM"
                       externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[PRENOM]"
                       lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[PRENOM]" />
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[NUMERO_A]"
+                      cachedDataType="i4"
+                      cachedName="NUMERO_A"
+                      externalMetadataColumnId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[NUMERO_A]"
+                      lineageId="Package\Tâche de flux de données\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[NUMERO_A]" />
                     <inputColumn
                       refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[VILLE]"
                       cachedDataType="wstr"
@@ -238,10 +296,6 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[NUMERO_A]"
-                      dataType="i4"
-                      name="NUMERO_A" />
-                    <externalMetadataColumn
                       refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[NOM]"
                       dataType="wstr"
                       length="60"
@@ -251,6 +305,10 @@
                       dataType="wstr"
                       length="120"
                       name="PRENOM" />
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[NUMERO_A]"
+                      dataType="i4"
+                      name="NUMERO_A" />
                     <externalMetadataColumn
                       refId="Package\Tâche de flux de données\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[VILLE]"
                       dataType="wstr"
@@ -548,43 +606,43 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="152,41.6"
-          Id="Package\Tâche de flux de données\Source OLE DB"
-          TopLeft="380.999994322658,224.999996647239" />
-        <NodeLayout
           Size="171.2,41.6"
           Id="Package\Tâche de flux de données\Destination OLE DB"
-          TopLeft="586.999991253018,387.99999421835" />
+          TopLeft="614.999990835786,343.999994874001" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Tâche de flux de données\Source OLE DB"
+          TopLeft="339.999994933605,103.999998450279" />
         <NodeLayout
           Size="154.4,41.6"
           Id="Package\Tâche de flux de données\Colonne dérivée"
-          TopLeft="297.999995559454,342.999994888902" />
+          TopLeft="489.999992698431,200.999997004867" />
         <EdgeLayout
           Id="Package\Tâche de flux de données.Paths[Sortie de source OLE DB]"
-          TopLeft="456.999994322658,266.599996647239">
+          TopLeft="415.999994933605,145.599998450279">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-81.7999987632036,76.399998241663"
+              EndConnector="151.199997764826,55.3999985545873"
               Start="0,0"
-              End="-81.7999987632036,68.899998241663">
+              End="151.199997764826,47.8999985545873">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.1999991208315" />
+                    End="0,23.6999992772936" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,34.1999991208315"
-                    Point2="0,38.1999991208315"
-                    Point3="-4,38.1999991208315" />
+                    Point1="0,23.6999992772936"
+                    Point2="0,27.6999992772936"
+                    Point3="4,27.6999992772936" />
                   <mssgle:LineSegment
-                    End="-77.7999987632036,38.1999991208315" />
+                    End="147.199997764826,27.6999992772936" />
                   <mssgle:CubicBezierSegment
-                    Point1="-77.7999987632036,38.1999991208315"
-                    Point2="-81.7999987632036,38.1999991208315"
-                    Point3="-81.7999987632036,42.1999991208315" />
+                    Point1="147.199997764826,27.6999992772936"
+                    Point2="151.199997764826,27.6999992772936"
+                    Point3="151.199997764826,31.6999992772936" />
                   <mssgle:LineSegment
-                    End="-81.7999987632036,68.899998241663" />
+                    End="151.199997764826,47.8999985545873" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -595,30 +653,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Tâche de flux de données.Paths[Sortie de colonne dérivée]"
-          TopLeft="452.399995559454,363.799994888902">
+          TopLeft="567.199992698431,242.599997004867">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="134.599995693564,44.9999993294479"
+              EndConnector="133.399998137355,101.399997869134"
               Start="0,0"
-              End="127.099995693564,44.9999993294479">
+              End="133.399998137355,93.8999978691341">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="63.2999978467822,0" />
+                    End="0,46.699998934567" />
                   <mssgle:CubicBezierSegment
-                    Point1="63.2999978467822,0"
-                    Point2="67.2999978467822,0"
-                    Point3="67.2999978467822,4" />
+                    Point1="0,46.699998934567"
+                    Point2="0,50.699998934567"
+                    Point3="4,50.699998934567" />
                   <mssgle:LineSegment
-                    End="67.2999978467822,40.9999993294479" />
+                    End="129.399998137355,50.699998934567" />
                   <mssgle:CubicBezierSegment
-                    Point1="67.2999978467822,40.9999993294479"
-                    Point2="67.2999978467822,44.9999993294479"
-                    Point3="71.2999978467822,44.9999993294479" />
+                    Point1="129.399998137355,50.699998934567"
+                    Point2="133.399998137355,50.699998934567"
+                    Point3="133.399998137355,54.699998934567" />
                   <mssgle:LineSegment
-                    End="127.099995693564,44.9999993294479" />
+                    End="133.399998137355,93.8999978691341" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -630,19 +688,6 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tâche de flux de données\Source OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Tâche de flux de données\Destination OLE DB">
     <Properties>
