@@ -1,0 +1,24 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# SSIS
+*.ispac
+*.dtsx.bak
+
+# SQL Server
+*.bak
+*.log
+
+# Fichiers temporaires
+*.tmp
+*.temp
+~$*
+
+# Fichiers de sauvegarde
+*.backup

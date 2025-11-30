@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-LABCKSR.gestion_livre"
+  DTS:DTSID="{12723603-543E-442B-9CD4-34B13E7FDECF}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-LABCKSR;Initial Catalog=gestion_livre;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Integration Services Project2-{12723603-543E-442B-9CD4-34B13E7FDECF}DESKTOP-LABCKSR.gestion_livre;Trust Server Certificate=True;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

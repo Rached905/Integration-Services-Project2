@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-LABCKSR.DWH_TP2"
+  DTS:DTSID="{DC2DA601-4546-4FFE-A42E-1B953B0338B0}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-LABCKSR;Initial Catalog=DWH_TP2;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Integration Services Project2-{DC2DA601-4546-4FFE-A42E-1B953B0338B0}DESKTOP-LABCKSR.DWH_TP2;Use Encryption for Data=False;Tag with column collation when possible=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
